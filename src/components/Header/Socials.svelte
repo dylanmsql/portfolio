@@ -1,10 +1,26 @@
 <script>
-    import {faGithub, faLinkedinIn} from "@fortawesome/free-brands-svg-icons";
+    import {faGithub, faLinkedinIn, faTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
     import Fa from "svelte-fa";
+
+    const socials = [
+        {
+            class: "git",
+            icon: faGithub,
+            link: "https://github.com/dylanmsql"
+        },
+        {
+            class: "linkedin",
+            icon: faLinkedinIn,
+            link: "https://www.linkedin.com/in/dylan-masquelier-5741b0185/"
+        }
+    ];
 </script>
 <div class="social">
-  <a href="https://github.com/dylanmsql" class="git"><Fa icon="{faGithub}" /></a>
-  <a href="https://www.linkedin.com/in/dylan-masquelier-5741b0185/" class="linkedin"><Fa icon="{faLinkedinIn}" /></a>
+  {#each socials as social}
+    <a href="{social.link}" class="{social.class}">
+      <Fa icon="{social.icon}"/>
+    </a>
+  {/each}
 </div>
 
 <style>
@@ -15,7 +31,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 20px 0;
     }
 
     .social a {
