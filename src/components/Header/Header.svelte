@@ -8,10 +8,11 @@
 <header>
   <Profile />
   <nav>
-    <a>About</a>
-    <a>Skills</a>
-    <a>Works</a>
-    <a>Contact</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#works">Works</a>
+    <a href="#contact">Contact</a>
+    <a href="/src/assets/Resume.pdf">Resume</a>
   </nav>
   <Socials />
 </header>

@@ -1,12 +1,23 @@
 <script lang="ts">
-  import Header from "./components/Header.svelte";
+  import Header from "./components/Header/Header.svelte";
+  import About from "./components/Content/About.svelte";
+  import Content from "./components/Content/Content.svelte";
+  import Skills from "./components/Content/Skills.svelte";
+  import Works from "./components/Content/Works.svelte";
+  import Contact from "./components/Content/Contact.svelte";
 </script>
 
 <main>
   <Header />
+  <Content>
+    <About />
+    <Skills />
+    <Works />
+    <Contact />
+  </Content>
 </main>
 
-<style scope>
+<style>
     a {
         font-weight: 500;
         color: #646cff;
