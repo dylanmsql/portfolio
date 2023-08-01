@@ -1,5 +1,5 @@
 <script>
-    import {faGithub, faLinkedinIn, faTwitter, faYoutube} from "@fortawesome/free-brands-svg-icons";
+    import {faGithub, faLinkedinIn} from "@fortawesome/free-brands-svg-icons";
     import Fa from "svelte-fa";
 
     const socials = [
