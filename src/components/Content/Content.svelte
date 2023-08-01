@@ -4,17 +4,12 @@
 
 <style>
     div {
-        justify-content: center;
-        align-items: center;
-        margin: 0 auto 0 10rem;
+        margin-left: 10rem;
         height: 100vh;
     }
 
     :global(section) {
         width: 100%;
         height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 </style>
