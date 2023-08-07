@@ -1,15 +1,14 @@
-<div>
+<div class="section-wrapper">
   <slot></slot>
 </div>
 
 <style>
-    div {
-        margin-left: 10rem;
-        height: 100vh;
+    .section-wrapper {
+        min-height: 100vh;
     }
 
     :global(section) {
         width: 100%;
-        height: 100vh;
+        min-height: inherit;
     }
 </style>
