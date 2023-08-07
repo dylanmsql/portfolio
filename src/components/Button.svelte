@@ -3,7 +3,7 @@
   export let onClick: (e:Event) => void = e => {};
 </script>
 
-<button onclick="{onClick}">
+<button on:click="{onClick}">
   {label}
 </button>
 
