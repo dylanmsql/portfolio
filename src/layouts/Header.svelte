@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Socials from "./Socials.svelte";
+    import Socials from "../components/Socials.svelte";
 
     const navItems = [
         {
@@ -41,7 +41,7 @@
         align-items: center;
         height: 10vh;
         background-color: #2E2F34;
-        padding: 0 2rem;
+        padding: 0 5rem;
     }
 
     nav {
