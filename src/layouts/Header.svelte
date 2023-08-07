@@ -1,6 +1,5 @@
 <script lang="ts">
-    import {faGithub, faLinkedinIn} from "@fortawesome/free-brands-svg-icons";
-    import Fa from "svelte-fa";
+    import Socials from "./Socials.svelte";
 
     const navItems = [
         {
@@ -20,33 +19,17 @@
             link: "#contact",
         }
     ];
-
-    const socials = [
-        {
-            icon: faGithub,
-            link: "https://github.com/dylanmsql"
-        },
-        {
-            icon: faLinkedinIn,
-            link: "https://www.linkedin.com/in/dylan-masquelier-5741b0185/"
-        }
-    ];
 </script>
 
 <header>
   <div class="initial">
-  DM<span class="text-color-yellow">.</span>
+    DM<span class="text-color-yellow">.</span>
   </div>
   <nav>
     {#each navItems as navItem}
       <a href={navItem.link}>{navItem.name}</a>
     {/each}
-    <span>|</span>
-    {#each socials as social}
-      <a href={social.link}>
-        <Fa icon={social.icon} />
-      </a>
-    {/each}
+    <Socials/>
   </nav>
 </header>
 
@@ -56,7 +39,6 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        width: 100vw;
         height: 10vh;
         background-color: #2E2F34;
         padding: 0 2rem;
@@ -66,8 +48,13 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
-        gap: 1rem;
+        justify-content: flex-end;
+        gap: 2rem;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
     }
 
     .initial {
