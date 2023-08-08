@@ -1,7 +1,7 @@
 <script lang="ts">
     import {faGithub, faLinkedinIn} from "@fortawesome/free-brands-svg-icons";
     import Fa from "svelte-fa";
-
+    import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
     const socials = [
         {
             icon: faGithub,
@@ -10,6 +10,10 @@
         {
             icon: faLinkedinIn,
             link: "https://www.linkedin.com/in/dylan-masquelier-5741b0185/"
+        },
+        {
+            icon: faArrowRight,
+            link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
         }
     ];
 </script>
