@@ -33,10 +33,10 @@
     </div>
   </div>
   <div class="about-section picture">
-    <img src="/src/assets/image/77782703.jpeg" alt="photo"/>
+    <img src="77782703.jpeg" alt="photo"/>
   </div>
   <div class="about-section presentation">
-    <Carousel components={[About, About]}/>
+    <Carousel components={[About]}/>
   </div>
 </section>
 
