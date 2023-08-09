@@ -1,42 +1,42 @@
 <script>
-    import Button from "../../components/Button.svelte";
-    import Divider from "../../components/Divider.svelte";
-    import About from "../../components/Presentation.svelte";
-    import Carousel from "../../components/Carousel.svelte";
-    import Socials from "../../components/Socials.svelte";
+  import Button from '../../components/Button.svelte';
+  import Divider from '../../components/Divider.svelte';
+  import About from '../../components/Presentation.svelte';
+  import Carousel from '../../components/Carousel.svelte';
+  import Socials from '../../components/Socials.svelte';
 
-    const contactMe = (e) => {
-        e.preventDefault();
-        window.location.href = "mailto:masquelierdylan1999@gmail.com";
-    }
+  const contactMe = (e) => {
+    e.preventDefault();
+    window.location.href = 'mailto:masquelierdylan1999@gmail.com';
+  };
 </script>
 
-<section id="about">
-  <div class="about-section">
-    <div class="profile">
+<section id='about'>
+  <div class='about-section'>
+    <div class='profile'>
       <h1>
         Dylan Masquelier<span>.</span>
       </h1>
-      <Divider/>
-      <div class="socials">
-        <a href="https://www.linkedin.com/in/dylan-masquelier-1b1b3a1b0/" target="_blank">
+      <Divider />
+      <div class='socials'>
+        <a href='https://www.linkedin.com/in/dylan-masquelier-1b1b3a1b0/' target='_blank'>
           LinkedIn
         </a>
         <span>|</span>
-        <a href="https://github.com/dylanmsql" target="_blank">
+        <a href='https://github.com/dylanmsql' target='_blank'>
           GitHub
         </a>
       </div>
-      <div class="button">
-        <Button label="Contact Me" onClick="{contactMe}"/>
+      <div class='button'>
+        <Button label='Contact Me' onClick='{contactMe}' />
       </div>
     </div>
   </div>
-  <div class="about-section picture">
-    <img src="77782703.jpeg" alt="photo"/>
+  <div class='about-section picture'>
+    <img src='77782703.jpeg' alt='photo' />
   </div>
-  <div class="about-section presentation">
-    <Carousel components={[About]}/>
+  <div class='about-section presentation'>
+    <Carousel components={[About]} />
   </div>
 </section>
 

@@ -1,10 +1,10 @@
 <script>
-    const sendMail = () => {
-        window.open('mailto:masquelierdylan1999@gmail.com');
-    }
+  const sendMail = () => {
+    window.open('mailto:masquelierdylan1999@gmail.com');
+  };
 </script>
 
-<section id="contact">
+<section id='contact'>
   <h1>Contact</h1>
   <p>My inbox is always open.</p>
   <button on:click|preventDefault={sendMail}>

@@ -1,15 +1,15 @@
-<script lang="ts">
-    export let itemCount: number;
-    export let current;
+<script lang='ts'>
+  export let itemCount: number;
+  export let current;
 </script>
 
-<div class="dots-container">
+<div class='dots-container'>
   {#each Array(itemCount) as _, i}
-    <span class="dots" class:active={current === i}></span>
+    <span class='dots' class:active={current === i}></span>
   {/each}
 </div>
 
-<style lang="scss">
+<style lang='scss'>
   .dots-container {
     display: flex;
     gap: 0.5rem;

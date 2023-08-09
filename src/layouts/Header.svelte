@@ -1,67 +1,67 @@
-<script lang="ts">
-    import {onMount, onDestroy} from "svelte";
-    import {tweened} from "svelte/motion";
-    import {sineIn} from "svelte/easing";
-    import Socials from "../components/Socials.svelte";
+<script lang='ts'>
+  import { onMount, onDestroy } from 'svelte';
+  import { tweened } from 'svelte/motion';
+  import { sineIn } from 'svelte/easing';
+  import Socials from '../components/Socials.svelte';
 
-    export let height = 10;
+  export let height = 10;
 
-    const translateY = tweened(0, {
-        duration: 500,
-        easing: sineIn,
-    });
+  const translateY = tweened(0, {
+    duration: 500,
+    easing: sineIn,
+  });
 
-    let lastScrollY = 0;
-    let ticking = false;
+  let lastScrollY = 0;
+  let ticking = false;
 
-    const handleScroll = () => {
-        const currentScrollY = window.scrollY;
-        if (!ticking) {
-            window.requestAnimationFrame(() => {
-                determineShowing(currentScrollY);
-                ticking = false;
-            });
-            ticking = true;
-        }
-    };
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        determineShowing(currentScrollY);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
 
-    const determineShowing = (currentScrollY) => {
-        if (currentScrollY > lastScrollY && hasChanged($translateY, height) && currentScrollY > height) {
-            translateY.set(height);
-        } else if (hasChanged($translateY, 0)) {
-            translateY.set(0);
-        }
-        lastScrollY = currentScrollY;
-    };
+  const determineShowing = (currentScrollY) => {
+    if (currentScrollY > lastScrollY && hasChanged($translateY, height) && currentScrollY > height) {
+      translateY.set(height);
+    } else if (hasChanged($translateY, 0)) {
+      translateY.set(0);
+    }
+    lastScrollY = currentScrollY;
+  };
 
-    const hasChanged = (a, b) => a !== b;
+  const hasChanged = (a, b) => a !== b;
 
-    onMount(() => {
-        window.addEventListener("scroll", handleScroll);
-    });
+  onMount(() => {
+    window.addEventListener('scroll', handleScroll);
+  });
 
-    onDestroy(() => {
-        window.removeEventListener("scroll", handleScroll);
-    });
+  onDestroy(() => {
+    window.removeEventListener('scroll', handleScroll);
+  });
 
-    const navItems = [
-        {name: "About", link: "#about",},
-        {name: "Skills", link: "#skills",},
-        {name: "Works", link: "#works",},
-        {name: "Contact", link: "#contact",}
-    ];
+  const navItems = [
+    { name: 'About', link: '#about' },
+    { name: 'Skills', link: '#skills' },
+    { name: 'Works', link: '#works' },
+    { name: 'Contact', link: '#contact' },
+  ];
 </script>
 
-<header style="--headerHeight: {height}vh;">
-  <div class="header" style="transform: translateY(-{$translateY}vh);">
-    <div class="initial">
-      DM<span class="text-color-yellow">.</span>
+<header style='--headerHeight: {height}vh;'>
+  <div class='header' style='transform: translateY(-{$translateY}vh);'>
+    <div class='initial'>
+      DM<span class='text-color-yellow'>.</span>
     </div>
     <nav>
       {#each navItems as navItem}
         <a href={navItem.link}>{navItem.name}</a>
       {/each}
-      <Socials/>
+      <Socials />
     </nav>
   </div>
 </header>

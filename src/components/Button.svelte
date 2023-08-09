@@ -1,14 +1,14 @@
-<script lang="ts">
-    export let label: string = 'Click me';
-    export let onClick: (e: Event) => void = e => {
-    };
+<script lang='ts'>
+  export let label: string = 'Click me';
+  export let onClick: (e: Event) => void = e => {
+  };
 </script>
 
-<button on:click="{onClick}">
+<button on:click='{onClick}'>
   {label}
 </button>
 
-<style lang="scss">
+<style lang='scss'>
   button {
     border: 3px solid #EBB257;
     color: #EBB257;

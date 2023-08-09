@@ -1,43 +1,43 @@
-<script lang="ts">
-    import Fa from "svelte-fa";
-    import {faArrowLeft, faArrowRight} from "@fortawesome/free-solid-svg-icons";
-    import Dots from "./Dots.svelte";
+<script lang='ts'>
+  import Fa from 'svelte-fa';
+  import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+  import Dots from './Dots.svelte';
 
-    export let components: Array<any>;
+  export let components: Array<any>;
 
-    let index = 0;
-    $: current = components[index];
+  let index = 0;
+  $: current = components[index];
 
-    const prev = (e) => {
-        e.preventDefault();
-        const newIndex = index - 1;
-        if (newIndex >= 0) {
-            index = newIndex;
-        }
-    };
+  const prev = (e) => {
+    e.preventDefault();
+    const newIndex = index - 1;
+    if (newIndex >= 0) {
+      index = newIndex;
+    }
+  };
 
-    const next = (e) => {
-        e.preventDefault();
-        const newIndex = index + 1;
-        if (newIndex <= components.length - 1) {
-            index = newIndex;
-        }
-    };
+  const next = (e) => {
+    e.preventDefault();
+    const newIndex = index + 1;
+    if (newIndex <= components.length - 1) {
+      index = newIndex;
+    }
+  };
 </script>
 
-<div class="carousel">
+<div class='carousel'>
   {#key index}
-    <div class="carousel-content">
-      <svelte:component this={current}/>
+    <div class='carousel-content'>
+      <svelte:component this={current} />
     </div>
   {/key}
-  <div class="carousel-panel">
+  <div class='carousel-panel'>
     <button on:click={prev}>
-      <Fa icon={faArrowLeft}/>
+      <Fa icon={faArrowLeft} />
     </button>
     <Dots itemCount={components.length} current={index} />
     <button on:click={next}>
-      <Fa icon={faArrowRight}/>
+      <Fa icon={faArrowRight} />
     </button>
   </div>
 </div>

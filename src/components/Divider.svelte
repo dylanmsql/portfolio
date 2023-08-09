@@ -1,8 +1,8 @@
-<script lang="ts">
+<script lang='ts'>
   export let size: number = 50;
 </script>
 
-<hr class="solid" style={`width:${size}px`}>
+<hr class='solid' style={`width:${size}px`}>
 
 <style>
     hr.solid {
