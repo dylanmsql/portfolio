@@ -2,8 +2,9 @@
   import Fa from 'svelte-fa';
   import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
   import Dots from './Dots.svelte';
+  import { SvelteComponent } from 'svelte';
 
-  export let components: Array<any>;
+  export let components: Array<SvelteComponent>;
 
   let index = 0;
   $: current = components[index];
