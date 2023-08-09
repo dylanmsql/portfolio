@@ -4,9 +4,10 @@
 
 <style>
     #works {
-        color: #333;
-        background-color: #f5f5f5;
-        padding: 50px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
     }
 
     #works h1 {
