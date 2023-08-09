@@ -1,47 +1,90 @@
 <script lang="ts">
+    import {onMount, onDestroy} from "svelte";
+    import {tweened} from "svelte/motion";
+    import {sineIn} from "svelte/easing";
     import Socials from "../components/Socials.svelte";
 
-    const navItems = [
-        {
-            name: "About",
-            link: "#about",
-        },
-        {
-            name: "Skills",
-            link: "#skills",
-        },
-        {
-            name: "Works",
-            link: "#works",
-        },
-        {
-            name: "Contact",
-            link: "#contact",
+    export let height = 10;
+
+    const translateY = tweened(0, {
+        duration: 500,
+        easing: sineIn,
+    });
+
+    let lastScrollY = 0;
+    let ticking = false;
+
+    const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                determineShowing(currentScrollY);
+                ticking = false;
+            });
+            ticking = true;
         }
+    };
+
+    const determineShowing = (currentScrollY) => {
+        if (currentScrollY > lastScrollY && hasChanged($translateY, height) && currentScrollY > height) {
+            translateY.set(height);
+        } else if (hasChanged($translateY, 0)) {
+            translateY.set(0);
+        }
+        lastScrollY = currentScrollY;
+    };
+
+    const hasChanged = (a, b) => a !== b;
+
+    onMount(() => {
+        window.addEventListener("scroll", handleScroll);
+    });
+
+    onDestroy(() => {
+        window.removeEventListener("scroll", handleScroll);
+    });
+
+    const navItems = [
+        {name: "About", link: "#about",},
+        {name: "Skills", link: "#skills",},
+        {name: "Works", link: "#works",},
+        {name: "Contact", link: "#contact",}
     ];
 </script>
 
-<header>
-  <div class="initial">
-    DM<span class="text-color-yellow">.</span>
+<header style="--headerHeight: {height}vh;">
+  <div class="header" style="transform: translateY(-{$translateY}vh);">
+    <div class="initial">
+      DM<span class="text-color-yellow">.</span>
+    </div>
+    <nav>
+      {#each navItems as navItem}
+        <a href={navItem.link}>{navItem.name}</a>
+      {/each}
+      <Socials/>
+    </nav>
   </div>
-  <nav>
-    {#each navItems as navItem}
-      <a href={navItem.link}>{navItem.name}</a>
-    {/each}
-    <Socials/>
-  </nav>
 </header>
 
 <style>
     header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        height: var(--headerHeight);
+        z-index: 100;
+    }
+
+    .header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        height: 10vh;
         background-color: #2E2F34;
         padding: 0 5rem;
+        width: 100%;
     }
 
     nav {
