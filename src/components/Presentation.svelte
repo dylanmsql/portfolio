@@ -1,9 +1,9 @@
 <script lang="ts">
-  const birthDate = new Date(1999, 8, 14);
-  const now = new Date();
+    const birthDate = new Date(1999, 8, 14);
+    const now = new Date();
 
-  const isPassedYet = now.getMonth() > birthDate.getMonth() || (now.getMonth() === birthDate.getMonth() && now.getDate() >= birthDate.getDate());
-  const age = now.getFullYear() - birthDate.getFullYear() - (isPassedYet ? 0 : 1);
+    const isPassedYet = now.getMonth() > birthDate.getMonth() || (now.getMonth() === birthDate.getMonth() && now.getDate() >= birthDate.getDate());
+    const age = now.getFullYear() - birthDate.getFullYear() - (isPassedYet ? 0 : 1);
 </script>
 
 <div class="about">
@@ -14,8 +14,10 @@
     <p class="address"><b>Address : </b> Lille, France</p>
     <p class="mail"><b>Mail : </b> dmasquelier@ippon.fr</p>
   </div>
-  <p>I'm a student in computer science at the University of Lille. I'm in my second year of Master's degree. Currently,
-    I'm doing an internship at Ippon Technologies in Lille. I'm working on an internal project called Candy-Doc.</p>
+  <p>Hello, I'm a student in computer science at the University of Lille. I'm in the second year of my Master's program.
+    Currently, I'm undertaking an internship at <a href="https://fr.ippon.tech/">Ippon Technologies</a> in Lille, where
+    I'm contributing to an internal
+    project named <a href="https://github.com/Candy-Doc">Candy-Doc</a>.</p>
 </div>
 
 
@@ -38,5 +40,13 @@
     width: 50%;
     font-style: italic;
     font-size: 1rem;
+  }
+
+  a {
+    color: #EBB257;
+  }
+
+  p {
+    text-align: justify;
   }
 </style>
