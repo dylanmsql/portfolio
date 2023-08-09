@@ -1,7 +1,7 @@
 <script>
-  const sendMail = () => {
-    window.open('mailto:masquelierdylan1999@gmail.com');
-  }
+    const sendMail = () => {
+        window.open('mailto:masquelierdylan1999@gmail.com');
+    }
 </script>
 
 <section id="contact">
@@ -13,35 +13,36 @@
 </section>
 
 <style>
-  #contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
+    #contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        background-color: #34353A;
+    }
 
-  #contact h1 {
-    font-size: 3rem;
-  }
+    #contact h1 {
+        font-size: 3rem;
+    }
 
-  #contact p {
-    font-size: 1.5rem;
-  }
+    #contact p {
+        font-size: 1.5rem;
+    }
 
-  #contact button {
-    margin: 2rem;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #1d1d1d;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
+    #contact button {
+        margin: 2rem;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #1d1d1d;
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
 
-  #contact button:hover {
-    background-color: #fff;
-    color: #1d1d1d;
-  }
+    #contact button:hover {
+        background-color: #fff;
+        color: #1d1d1d;
+    }
 </style>
