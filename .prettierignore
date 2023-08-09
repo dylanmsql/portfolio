@@ -1,0 +1,9 @@
+# Ignore
+
+node_modules
+dist
+.github/**
+.pre-commit-config.yaml
+.releaserc.js
+.vscode/*
+README.md
