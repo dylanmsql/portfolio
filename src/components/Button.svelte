@@ -1,6 +1,6 @@
 <script lang='ts'>
   export let label: string = 'Click me';
-  export let onClick: (e: Event) => void = e => {
+  export let onClick: (_: Event) => void = () => {
   };
 </script>
 
