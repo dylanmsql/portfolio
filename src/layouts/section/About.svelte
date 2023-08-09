@@ -3,7 +3,6 @@
   import Divider from '../../components/Divider.svelte';
   import About from '../../components/Presentation.svelte';
   import Carousel from '../../components/Carousel.svelte';
-  import Socials from '../../components/Socials.svelte';
 
   const contactMe = (e) => {
     e.preventDefault();
