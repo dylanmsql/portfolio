@@ -1,10 +1,10 @@
-<script>
+<script lang='ts'>
   import Button from '../../components/Button.svelte';
   import Divider from '../../components/Divider.svelte';
-  import About from '../../components/Presentation.svelte';
+  import Presentation from '../../components/Presentation.svelte';
   import Carousel from '../../components/Carousel.svelte';
 
-  const contactMe = (e) => {
+  const contactMe = (e: Event) => {
     e.preventDefault();
     window.location.href = 'mailto:masquelierdylan1999@gmail.com';
   };
@@ -32,10 +32,10 @@
     </div>
   </div>
   <div class='about-section picture'>
-    <img src='77782703.jpeg' alt='photo' />
+    <img src='77782703.jpeg' alt='moi' />
   </div>
   <div class='about-section presentation'>
-    <Carousel components={[About]} />
+    <Carousel components={[Presentation, Presentation]} />
   </div>
 </section>
 
