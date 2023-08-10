@@ -20,10 +20,12 @@
     height: 10px;
     border-radius: 50%;
     border: solid 2px #EBB257;
+    transition: all 0.3s ease-in-out;
   }
 
   .active {
     transform: scale(1.5);
     background-color: #EBB257;
+    transition: all 0.3s ease-in-out;
   }
 </style>
