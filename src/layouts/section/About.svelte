@@ -3,6 +3,7 @@
   import Divider from '../../components/Divider.svelte';
   import Presentation from '../../components/Presentation.svelte';
   import Carousel from '../../components/Carousel.svelte';
+  import Diplomas from '../../components/diploma/Diplomas.svelte';
 
   const contactMe = (e: Event) => {
     e.preventDefault();
@@ -35,7 +36,7 @@
     <img src='77782703.jpeg' alt='moi' />
   </div>
   <div class='about-section presentation'>
-    <Carousel components={[Presentation, Presentation]} />
+    <Carousel components={[Presentation, Diplomas]} />
   </div>
 </section>
 
