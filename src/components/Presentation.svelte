@@ -7,7 +7,7 @@
 </script>
 
 <div class='about'>
-  <h1>Who am I ?</h1>
+  <h2>Who am I ?</h2>
   <div class='info'>
     <p class='name'><b>Name : </b> Dylan Masquelier</p>
     <p class='duration'><b>Age : </b> {age}</p>
@@ -22,7 +22,7 @@
 
 
 <style lang='scss'>
-  h1 {
+  h2 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
     color: #EBB257;
