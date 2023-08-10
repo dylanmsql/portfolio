@@ -1,22 +1,22 @@
 <script lang='ts'>
-  export let date: string;
+  export let start:number;
+  export let end:number;
   export let diploma: string;
-
-  export let school: string;
-
   export let speciality: string;
+  export let school: string;
+  export let location: string;
 </script>
 
 <div class='diploma'>
   <div class='date'>
-    <p>{date}</p>
+    <p>{start}-{end}</p>
   </div>
   <div class='diploma-content'>
     <h2>{diploma}</h2>
     {#if speciality}
       <p>{speciality}</p>
     {/if}
-    <p>{school}</p>
+    <p>{school}, {location}</p>
   </div>
 </div>
 
