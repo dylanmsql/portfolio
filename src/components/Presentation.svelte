@@ -6,7 +6,7 @@
   const age = now.getFullYear() - birthDate.getFullYear() - (isPassedYet ? 0 : 1);
 </script>
 
-<div class='about'>
+<div class='presentation'>
   <h2>Who am I ?</h2>
   <div class='info'>
     <p class='name'><b>Name : </b> Dylan Masquelier</p>
