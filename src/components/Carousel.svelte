@@ -2,14 +2,14 @@
   import Fa from 'svelte-fa';
   import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
   import Dots from './Dots.svelte';
-  import { SvelteComponent } from 'svelte';
+  import type { ComponentType } from 'svelte';
 
-  export let components: Array<SvelteComponent>;
+  export let components: ComponentType[];
 
   let index = 0;
   $: current = components[index];
 
-  const prev = (e) => {
+  const prev = (e: Event) => {
     e.preventDefault();
     const newIndex = index - 1;
     if (newIndex >= 0) {
@@ -17,7 +17,7 @@
     }
   };
 
-  const next = (e) => {
+  const next = (e: Event) => {
     e.preventDefault();
     const newIndex = index + 1;
     if (newIndex <= components.length - 1) {
