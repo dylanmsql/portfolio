@@ -3,6 +3,8 @@
   import { tweened } from 'svelte/motion';
   import { sineIn } from 'svelte/easing';
   import Socials from '../components/Socials.svelte';
+  import { debounce } from '../utils/Debounce';
+  import { hasChanged } from '../utils/HasChanged';
 
   export let height = 10;
 
@@ -16,6 +18,7 @@
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
+
     if (!ticking) {
       window.requestAnimationFrame(() => {
         determineShowing(currentScrollY);
@@ -25,7 +28,9 @@
     }
   };
 
-  const determineShowing = (currentScrollY) => {
+  const debouncedHandleScroll = debounce(handleScroll, 100);
+
+  const determineShowing = (currentScrollY: number) => {
     if (currentScrollY > lastScrollY && hasChanged($translateY, height) && currentScrollY > height) {
       translateY.set(height);
     } else if (hasChanged($translateY, 0)) {
@@ -34,14 +39,12 @@
     lastScrollY = currentScrollY;
   };
 
-  const hasChanged = (a, b) => a !== b;
-
   onMount(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', debouncedHandleScroll);
   });
 
   onDestroy(() => {
-    window.removeEventListener('scroll', handleScroll);
+    window.removeEventListener('scroll', debouncedHandleScroll);
   });
 
   const navItems = [
