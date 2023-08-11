@@ -39,8 +39,6 @@
     <Carousel>
       <Presentation />
       <Diplomas />
-      <Presentation />
-      <Diplomas />
     </Carousel>
   </div>
 </section>
