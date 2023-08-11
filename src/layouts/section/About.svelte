@@ -17,7 +17,7 @@
       <h1>
         Dylan Masquelier<span>.</span>
       </h1>
-      <Divider />
+      <Divider size={10}/>
       <div class='socials'>
         <a href='https://www.linkedin.com/in/dylan-masquelier-1b1b3a1b0/' target='_blank'>
           LinkedIn
