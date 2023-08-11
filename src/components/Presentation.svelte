@@ -53,4 +53,10 @@
   p {
     text-align: justify;
   }
+
+  @media (max-width: 565px) {
+    .address, .duration, .mail, .name {
+      width: 100%;
+    }
+  }
 </style>
