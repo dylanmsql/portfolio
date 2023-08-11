@@ -38,11 +38,11 @@
     </div>
   </div>
   <div class='carousel-panel'>
-    <button on:click={prev} class:disabled={index === 0}>
+    <button on:click={prev} disabled={index === 0}>
       <Fa icon={faArrowLeft} />
     </button>
     <Dots itemCount={items.length} current={index} />
-    <button on:click={next} class:disabled={index === items.length - 1}>
+    <button on:click={next} disabled={index === items.length - 1}>
       <Fa icon={faArrowRight} />
     </button>
   </div>
@@ -95,7 +95,7 @@
         transition: all 0.3s ease-in-out;
     }
 
-    .disabled {
+    button:disabled {
         opacity: 0.5;
         cursor: not-allowed;
     }
