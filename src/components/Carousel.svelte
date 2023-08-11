@@ -2,14 +2,15 @@
   import Fa from 'svelte-fa';
   import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
   import Dots from './Dots.svelte';
+  import { onMount } from 'svelte';
 
   let container: HTMLDivElement;
   let index = 0;
   let items = [];
 
-  $: if (container) {
+  onMount(() => {
     items = Array.from(container.children);
-  }
+  });
 
   $: slideValue = container ? -(index * container.offsetWidth) + 'px' : '0px';
 
@@ -24,25 +25,24 @@
   const next = (e: Event) => {
     e.preventDefault();
     const newIndex = index + 1;
-    if (newIndex <= items.length - 1) {
+    if (newIndex < items.length) {
       index = newIndex;
     }
   };
 </script>
 
-
 <div class='carousel'>
   <div class='carousel-container'>
-    <div bind:this={container} class='carousel-items' style='transform: translateX({slideValue});'>
+    <div bind:this={container} class='carousel-items' style={`transform: translateX(${slideValue});`}>
       <slot></slot>
     </div>
   </div>
   <div class='carousel-panel'>
-    <button on:click={prev} class:disable={index === 0}>
+    <button on:click={prev} class:disabled={index === 0}>
       <Fa icon={faArrowLeft} />
     </button>
     <Dots itemCount={items.length} current={index} />
-    <button on:click={next} class:disable={index === items.length - 1}>
+    <button on:click={next} class:disabled={index === items.length - 1}>
       <Fa icon={faArrowRight} />
     </button>
   </div>
@@ -95,8 +95,8 @@
         transition: all 0.3s ease-in-out;
     }
 
-    .disable {
+    .disabled {
         opacity: 0.5;
-        cursor: none;
+        cursor: not-allowed;
     }
 </style>
