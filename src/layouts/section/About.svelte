@@ -17,7 +17,7 @@
       <h1>
         Dylan Masquelier<span>.</span>
       </h1>
-      <Divider size={10}/>
+      <Divider size={10} />
       <div class='socials'>
         <a href='https://www.linkedin.com/in/dylan-masquelier-1b1b3a1b0/' target='_blank'>
           LinkedIn
@@ -36,7 +36,10 @@
     <img src='77782703.jpeg' alt='moi' />
   </div>
   <div class='about-section presentation'>
-    <Carousel components={[Presentation, Diplomas]} />
+    <Carousel>
+      <Presentation />
+      <Diplomas />
+    </Carousel>
   </div>
 </section>
 
@@ -50,7 +53,7 @@
         gap: 2rem;
     }
 
-    span {
+    .profile h1 span {
         color: #EBB257;
     }
 
@@ -60,32 +63,34 @@
         justify-content: center;
         align-items: flex-start;
         gap: 1rem;
-
-        & h1 {
-            font-size: 3rem;
-            font-weight: bold;
-        }
-
-        & .socials {
-            & a {
-                text-decoration: none;
-            }
-        }
-
-        & .button {
-            margin: 1rem 0;
-        }
     }
 
-    .picture {
-        & img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-        }
+    .profile h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .profile .socials a {
+        text-decoration: none;
+    }
+
+    .profile .button {
+        margin: 1rem 0;
+    }
+
+    .picture img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
     }
 
     .presentation {
-        width: 500px;
+        width: 33%;
+    }
+
+    @media screen and (max-width: 1312px) {
+        .presentation {
+            width: 100%;
+        }
     }
 </style>

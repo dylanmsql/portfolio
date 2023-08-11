@@ -22,6 +22,10 @@
 
 
 <style lang='scss'>
+  .presentation {
+    min-width: 100%;
+  }
+
   h2 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
@@ -48,5 +52,11 @@
 
   p {
     text-align: justify;
+  }
+
+  @media (max-width: 565px) {
+    .address, .duration, .mail, .name {
+      width: 100%;
+    }
   }
 </style>

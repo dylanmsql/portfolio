@@ -40,8 +40,7 @@
 
 <style>
     .diplomas {
-        width: 100%;
-        height: 100%;
+        min-width: 100%;
         display: flex;
         flex-direction: column;
         gap: 1rem;
