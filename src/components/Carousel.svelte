@@ -33,12 +33,12 @@
     </div>
   {/key}
   <div class='carousel-panel'>
-    <button on:click={prev}>
+    <button on:click={prev} class:disable={index === 0}>
       <Fa icon={faArrowLeft} />
     </button>
     <Dots itemCount={components.length} current={index} />
-    <button on:click={next}>
-      <Fa icon={faArrowRight} />
+    <button on:click={next} class:disable={index === components.length - 1}>
+      <Fa icon={faArrowRight}/>
     </button>
   </div>
 </div>
@@ -49,13 +49,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 100%;
     }
 
     .carousel-content {
         width: 100%;
-        height: 100%;
-        display: flex;
     }
 
     .carousel-panel {
@@ -76,5 +73,12 @@
         border: solid 3px #EBB257;
         cursor: pointer;
         background-color: transparent;
+        color: #EBB257;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .disable {
+        opacity: 0.5;
+        cursor: none;
     }
 </style>
