@@ -2,12 +2,16 @@
   import Fa from 'svelte-fa';
   import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
   import Dots from './Dots.svelte';
-  import type { ComponentType } from 'svelte';
 
-  export let components: ComponentType[];
-
+  let container: HTMLDivElement;
   let index = 0;
-  $: current = components[index];
+  let items = [];
+
+  $: if (container) {
+    items = Array.from(container.children);
+  }
+
+  $: slideValue = container ? -(index * container.offsetWidth) + 'px' : '0px';
 
   const prev = (e: Event) => {
     e.preventDefault();
@@ -20,25 +24,26 @@
   const next = (e: Event) => {
     e.preventDefault();
     const newIndex = index + 1;
-    if (newIndex <= components.length - 1) {
+    if (newIndex <= items.length - 1) {
       index = newIndex;
     }
   };
 </script>
 
+
 <div class='carousel'>
-  {#key index}
-    <div class='carousel-content'>
-      <svelte:component this={current} />
+  <div class='carousel-container'>
+    <div bind:this={container} class='carousel-items' style='transform: translateX({slideValue});'>
+      <slot></slot>
     </div>
-  {/key}
+  </div>
   <div class='carousel-panel'>
     <button on:click={prev} class:disable={index === 0}>
       <Fa icon={faArrowLeft} />
     </button>
-    <Dots itemCount={components.length} current={index} />
-    <button on:click={next} class:disable={index === components.length - 1}>
-      <Fa icon={faArrowRight}/>
+    <Dots itemCount={items.length} current={index} />
+    <button on:click={next} class:disable={index === items.length - 1}>
+      <Fa icon={faArrowRight} />
     </button>
   </div>
 </div>
@@ -51,7 +56,20 @@
         justify-content: center;
     }
 
-    .carousel-content {
+    .carousel-container {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .carousel-items {
+        display: flex;
+        transition: transform 0.3s;
+        width: 100%;
+    }
+
+    .carousel-items > * {
         width: 100%;
     }
 

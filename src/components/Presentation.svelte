@@ -22,6 +22,10 @@
 
 
 <style lang='scss'>
+  .presentation {
+    min-width: 100%;
+  }
+
   h2 {
     font-size: 1.3rem;
     margin-bottom: 1rem;

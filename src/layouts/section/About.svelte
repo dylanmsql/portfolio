@@ -17,7 +17,7 @@
       <h1>
         Dylan Masquelier<span>.</span>
       </h1>
-      <Divider size={10}/>
+      <Divider size={10} />
       <div class='socials'>
         <a href='https://www.linkedin.com/in/dylan-masquelier-1b1b3a1b0/' target='_blank'>
           LinkedIn
@@ -36,7 +36,10 @@
     <img src='77782703.jpeg' alt='moi' />
   </div>
   <div class='about-section presentation'>
-    <Carousel components={[Presentation, Diplomas]} />
+    <Carousel>
+      <Presentation />
+      <Diplomas />
+    </Carousel>
   </div>
 </section>
 
@@ -86,6 +89,14 @@
     }
 
     .presentation {
-        width: 500px;
+        width: 33%;
+    }
+
+    @media screen {
+        @media (max-width: 1312px) {
+            .presentation {
+                width: 100%;
+            }
+        }
     }
 </style>
