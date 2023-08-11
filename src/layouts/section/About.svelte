@@ -39,6 +39,8 @@
     <Carousel>
       <Presentation />
       <Diplomas />
+      <Presentation />
+      <Diplomas />
     </Carousel>
   </div>
 </section>
@@ -53,7 +55,7 @@
         gap: 2rem;
     }
 
-    span {
+    .profile h1 span {
         color: #EBB257;
     }
 
@@ -63,40 +65,34 @@
         justify-content: center;
         align-items: flex-start;
         gap: 1rem;
-
-        & h1 {
-            font-size: 3rem;
-            font-weight: bold;
-        }
-
-        & .socials {
-            & a {
-                text-decoration: none;
-            }
-        }
-
-        & .button {
-            margin: 1rem 0;
-        }
     }
 
-    .picture {
-        & img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-        }
+    .profile h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .profile .socials a {
+        text-decoration: none;
+    }
+
+    .profile .button {
+        margin: 1rem 0;
+    }
+
+    .picture img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
     }
 
     .presentation {
         width: 33%;
     }
 
-    @media screen {
-        @media (max-width: 1312px) {
-            .presentation {
-                width: 100%;
-            }
+    @media screen and (max-width: 1312px) {
+        .presentation {
+            width: 100%;
         }
     }
 </style>
