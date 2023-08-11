@@ -78,28 +78,4 @@
         align-items: center;
         justify-content: center;
     }
-
-    .skill-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 200px;
-        height: 200px;
-        background-color: #a49292;
-        backdrop-filter: blur(10px);
-        border-radius: 10px;
-        margin: 10px;
-    }
-
-    .skill-card img {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 10px;
-    }
-
-    .skill-card:hover {
-        transform: scale(1.1);
-        transition: 0.5s;
-    }
 </style>
