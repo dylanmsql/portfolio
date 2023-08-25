@@ -3,7 +3,7 @@
   import Divider from '../../../components/Divider.svelte';
   import Presentation from './Presentation.svelte';
   import Carousel from '../../../components/Carousel.svelte';
-  import Diplomas from '../../../components/diploma/Diplomas.svelte';
+  import Diplomas from './diploma/Diplomas.svelte';
 
   const contactMe = (e: Event) => {
     e.preventDefault();
