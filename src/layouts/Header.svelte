@@ -5,6 +5,8 @@
   import Socials from '../components/Socials.svelte';
   import { debounce } from '../utils/Debounce';
   import { hasChanged } from '../utils/HasChanged';
+  import { scrollSpy } from '../actions/scrollSpy';
+  import type { NavItem } from '../utils/type';
 
   export let height = 10;
 
@@ -47,22 +49,22 @@
     window.removeEventListener('scroll', debouncedHandleScroll);
   });
 
-  const navItems = [
-    { name: 'About', link: '#about' },
-    { name: 'Skills', link: '#skills' },
-    { name: 'Works', link: '#works' },
-    { name: 'Contact', link: '#contact' },
+  const navItems: NavItem[] = [
+    { name: 'About', id: 'about' },
+    { name: 'Skills', id: 'skills' },
+    { name: 'Works', id: 'works' },
+    { name: 'Contact', id: 'contact' },
   ];
 </script>
 
-<header style='--headerHeight: {height}vh;'>
+<header style='--headerHeight: {height}vh;' use:scrollSpy={{sections: navItems}}>
   <div class='header' style='transform: translateY(-{$translateY}vh);'>
     <div class='initial'>
       DM<span class='text-color-yellow'>.</span>
     </div>
     <nav>
-      {#each navItems as navItem}
-        <a href={navItem.link}>{navItem.name}</a>
+      {#each navItems as navItem, i}
+        <a href={`#${navItem.id}`} class:active={i === 0}>{navItem.name}</a>
       {/each}
       <Socials />
     </nav>
@@ -111,5 +113,11 @@
 
     .text-color-yellow {
         color: #EBB257;
+    }
+
+    .active {
+        color: #EBB257;
+        border-bottom: solid 0.2rem #EBB257;
+        transition: all 0.1s ease-in-out;
     }
 </style>
