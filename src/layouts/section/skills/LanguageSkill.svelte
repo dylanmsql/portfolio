@@ -15,7 +15,7 @@
   <h2>Languages</h2>
   <div class='language-skills'>
     {#each skills as skill}
-      <div class='language-skills__item'>
+      <div class='language-skills-item'>
         <img src={skill.image} alt={skill.name} />
         <span>{skill.name}</span>
       </div>
@@ -50,7 +50,7 @@
     max-width: 800px;
   }
 
-  .language-skills__item {
+  .language-skills-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,16 +64,16 @@
     transition: all 0.3s ease-in-out;
   }
 
-  .language-skills__item:hover {
+  .language-skills-item:hover {
     transform: scale(1.1);
   }
 
-  .language-skills__item img {
+  .language-skills-item img {
     width: 50px;
     height: 50px;
   }
 
-  .language-skills__item span {
+  .language-skills-item span {
     font-size: 0.8rem;
     font-weight: 600;
     margin-top: 0.5rem;

@@ -10,7 +10,7 @@
   <h2>Databases</h2>
   <div class='database-skills'>
     {#each skills as skill}
-      <div class='database-skills__item'>
+      <div class='database-skills-item'>
         <img src={skill.image} alt={skill.name} />
         <span>{skill.name}</span>
       </div>
@@ -45,7 +45,7 @@
     max-width: 800px;
   }
 
-  .database-skills__item {
+  .database-skills-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,16 +59,16 @@
     transition: all 0.3s ease-in-out;
   }
 
-  .database-skills__item:hover {
+  .database-skills-item:hover {
     transform: scale(1.1);
   }
 
-  .database-skills__item img {
+  .database-skills-item img {
     width: 50px;
     height: 50px;
   }
 
-  .database-skills__item span {
+  .database-skills-item span {
     font-size: 0.8rem;
     font-weight: 600;
     margin-top: 0.5rem;
