@@ -1,21 +1,16 @@
 <script lang='ts'>
   const skills = [
-    { image: 'https://cdn.iconscout.com/icon/free/png-256/html5-40-1175193.png', name: 'HTML' },
-    { image: 'https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png', name: 'CSS' },
-    { image: 'https://cdn.iconscout.com/icon/free/png-256/javascript-2038874-1720087.png', name: 'JavaScript' },
-    { image: 'https://cdn.iconscout.com/icon/free/png-256/c-57-1175191.png', name: 'C' },
-    { image: 'https://cdn.iconscout.com/icon/free/png-256/c-4-226082.png', name: 'C++' },
-    { image: 'https://cdn.iconscout.com/icon/free/png-256/csharp-1-1175241.png', name: 'C#' },
-    { image: 'https://cdn.iconscout.com/icon/free/png-256/java-60-1174953.png', name: 'Java' },
-    { image: 'https://cdn.iconscout.com/icon/free/png-256/python-2-226051.png', name: 'Python' },
+    {    image: 'https://cdn.iconscout.com/icon/free/png-256/mysql-19-1174939.png',    name: 'MySQL',  },
+    {      image: 'https://cdn.iconscout.com/icon/free/png-256/mongodb-3-1175138.png',      name: 'MongoDB',    },
+    {      image: 'https://cdn.iconscout.com/icon/free/png-256/postgresql-11-1175122.png',      name: 'PostgreSQL',    },
   ];
 </script>
 
-<div class='language'>
-  <h2>Languages</h2>
-  <div class='language-skills'>
+<div class='database'>
+  <h2>Databases</h2>
+  <div class='database-skills'>
     {#each skills as skill}
-      <div class='language-skills__item'>
+      <div class='database-skills__item'>
         <img src={skill.image} alt={skill.name} />
         <span>{skill.name}</span>
       </div>
@@ -25,7 +20,7 @@
 
 
 <style lang='scss'>
-  .language {
+  .database {
     min-width: 100%;
     display: flex;
     flex-direction: column;
@@ -34,13 +29,13 @@
     margin: 2rem 0;
   }
 
-  .language h2 {
+  .database h2 {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1rem;
   }
 
-  .language-skills {
+  .database-skills {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -50,7 +45,7 @@
     max-width: 800px;
   }
 
-  .language-skills__item {
+  .database-skills__item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,16 +59,16 @@
     transition: all 0.3s ease-in-out;
   }
 
-  .language-skills__item:hover {
+  .database-skills__item:hover {
     transform: scale(1.1);
   }
 
-  .language-skills__item img {
+  .database-skills__item img {
     width: 50px;
     height: 50px;
   }
 
-  .language-skills__item span {
+  .database-skills__item span {
     font-size: 0.8rem;
     font-weight: 600;
     margin-top: 0.5rem;

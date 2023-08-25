@@ -1,6 +1,7 @@
 <script>
   import Carousel from '../../../components/Carousel.svelte';
   import LanguageSkill from './LanguageSkill.svelte';
+  import DatabaseSkill from './DatabaseSkill.svelte';
 
   const skills = [
     {
@@ -24,18 +25,6 @@
       image: 'https://cdn.iconscout.com/icon/free/png-256/svelte-3-1175052.png',
     },
     {
-      image: 'https://cdn.iconscout.com/icon/free/png-256/mysql-19-1174939.png',
-      name: 'MySQL',
-    },
-    {
-      image: 'https://cdn.iconscout.com/icon/free/png-256/mongodb-3-1175138.png',
-      name: 'MongoDB',
-    },
-    {
-      image: 'https://cdn.iconscout.com/icon/free/png-256/postgresql-11-1175122.png',
-      name: 'PostgreSQL',
-    },
-    {
       image: 'https://cdn.iconscout.com/icon/free/png-256/git-225996.png',
       name: 'Git',
     },
@@ -51,6 +40,7 @@
   <div class='skill'>
     <Carousel>
       <LanguageSkill />
+      <DatabaseSkill />
     </Carousel>
   </div>
 </section>
