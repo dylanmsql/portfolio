@@ -5,6 +5,7 @@
 <style>
     .section-wrapper {
         min-height: 100vh;
+        margin-top: 10vh;
     }
 
     :global(section) {
