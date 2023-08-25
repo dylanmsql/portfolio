@@ -1,9 +1,9 @@
 <script lang='ts'>
-  import Button from '../../components/Button.svelte';
-  import Divider from '../../components/Divider.svelte';
-  import Presentation from '../../components/Presentation.svelte';
-  import Carousel from '../../components/Carousel.svelte';
-  import Diplomas from '../../components/diploma/Diplomas.svelte';
+  import Button from '../../../components/Button.svelte';
+  import Divider from '../../../components/Divider.svelte';
+  import Presentation from './Presentation.svelte';
+  import Carousel from '../../../components/Carousel.svelte';
+  import Diplomas from '../../../components/diploma/Diplomas.svelte';
 
   const contactMe = (e: Event) => {
     e.preventDefault();

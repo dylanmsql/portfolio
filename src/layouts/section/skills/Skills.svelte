@@ -1,6 +1,6 @@
 <script>
-  import Carousel from '../../components/Carousel.svelte';
-  import LanguageSkill from '../../components/Skill/LanguageSkill.svelte';
+  import Carousel from '../../../components/Carousel.svelte';
+  import LanguageSkill from './LanguageSkill.svelte';
 
   const skills = [
     {
