@@ -12,7 +12,7 @@
     {
       name: 'LinkedIn',
       icon: faLinkedin,
-      link: 'https://www.linkedin.com/in/dylan-masquelier-1b1b3a1b3/',
+      link: 'https://www.linkedin.com/in/dylan-masquelier-5741b0185/',
     },
     {
       name: 'masquelierdylan1999@gmail.com',
