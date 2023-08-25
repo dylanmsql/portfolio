@@ -22,7 +22,7 @@
 <div class='socials'>
   <span>|</span>
   {#each socials as social}
-    <a href='{social.link}'>
+    <a href='{social.link}' target='_blank'>
       <Fa icon={social.icon} />
     </a>
   {/each}
