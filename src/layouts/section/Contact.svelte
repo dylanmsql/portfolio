@@ -5,7 +5,7 @@
 
   const contacts = [
     {
-      name: 'GitHub',
+      name: 'dylanmsql',
       icon: faGithub,
       link: 'https://github.com/dylanmsql',
     },
