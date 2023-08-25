@@ -1,5 +1,4 @@
 <script>
-  import Fa from 'svelte-fa';
   import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
   import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
   import LinkCard from '../../components/LinkCard.svelte';
