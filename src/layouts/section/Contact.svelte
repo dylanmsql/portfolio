@@ -28,12 +28,14 @@
 </script>
 
 <section id='contact'>
-  <h1>Ways to contact me</h1>
-  <p>Feel free to contact me if you have any questions or if you want to work with me.</p>
-  <div class='links'>
-    {#each contacts as contact}
-      <LinkCard {contact} />
-    {/each}
+  <div class='contact-wrapper'>
+    <h1>Ways to contact me</h1>
+    <p>Thanks for checking out my portfolio! Got questions or want to work together on something cool? Feel free to get in touch. I'm always open to new ideas and opportunities. Let's make something awesome together!</p>
+    <div class='links'>
+      {#each contacts as contact}
+        <LinkCard {contact} />
+      {/each}
+    </div>
   </div>
 </section>
 
@@ -47,6 +49,14 @@
         background-color: #34353A;
     }
 
+    #contact .contact-wrapper {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
     #contact h1 {
         font-size: 2rem;
         text-align: center;
@@ -55,6 +65,7 @@
     #contact p {
         font-size: 1.2rem;
         text-align: center;
+        margin: 1rem 0;
     }
 
     .links {
@@ -64,5 +75,11 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+    }
+
+    @media screen and (max-width: 768px) {
+        #contact .contact-wrapper {
+            width: 90%;
+        }
     }
 </style>
