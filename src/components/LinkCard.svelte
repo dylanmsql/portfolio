@@ -5,7 +5,7 @@
 </script>
 
 
-<a href={contact.link}>
+<a href={contact.link} target='_blank'>
   {#if contact.icon}
     <Fa icon={contact.icon} />
   {/if}
