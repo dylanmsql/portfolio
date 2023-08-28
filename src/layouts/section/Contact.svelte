@@ -30,7 +30,7 @@
 <section id='contact'>
   <div class='contact-wrapper'>
     <h1>Ways to contact me</h1>
-    <p>Thanks for checking out my portfolio! Got questions or want to work together on something cool? Feel free to get in touch. I'm always open to new ideas and opportunities. Let's make something awesome together!</p>
+    <p>Thanks for checking out my portfolio! Got questions or want to work together on something cool? Feel free to get in touch. I'm always open to new ideas and opportunities.</p>
     <div class='links'>
       {#each contacts as contact}
         <LinkCard {contact} />
