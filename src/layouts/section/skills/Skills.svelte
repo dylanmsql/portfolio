@@ -1,47 +1,65 @@
-<script>
-  import Carousel from '../../../components/Carousel.svelte';
-  import LanguageSkill from './LanguageSkill.svelte';
-  import DatabaseSkill from './DatabaseSkill.svelte';
+<script lang='ts'>
+  import SkillCard from '../../../components/SkillCard.svelte';
 
-  const skills = [
-    {
-      image: 'https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png',
-      name: 'NodeJS',
-    },
-    {
-      image: 'https://cdn.iconscout.com/icon/free/png-256/dot-net-1-1175179.png',
-      name: '.NET Core',
-    },
-    {
-      image: 'https://cdn.iconscout.com/icon/free/png-256/react-4-1175110.png',
-      name: 'React',
-    },
-    {
-      image: 'https://cdn.iconscout.com/icon/free/png-256/vue-282497.png',
-      name: 'Vue',
-    },
-    {
-      name: 'Svelte',
-      image: 'https://cdn.iconscout.com/icon/free/png-256/svelte-3-1175052.png',
-    },
-    {
-      image: 'https://cdn.iconscout.com/icon/free/png-256/git-225996.png',
-      name: 'Git',
-    },
-    {
-      image: 'https://cdn.iconscout.com/icon/free/png-256/docker-226091.png',
-      name: 'Docker',
-    },
-  ];
+  let activeTab = 'webdev';
+
+  const categories = {
+    'webdev': [
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/html5-40-1175193.png', name: 'HTML' },
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png', name: 'CSS' },
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/javascript-2038874-1720087.png', name: 'JavaScript' },
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/react-4-1175110.png', name: 'React' },
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/vue-282497.png', name: 'Vue' },
+      {
+        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/langfr-220px-Svelte_Logo.svg.png',
+        name: 'Svelte',
+      },
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/node-js-1174925.png', name: 'NodeJS' },
+    ],
+    'softwaredev': [
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/c-programming-569564.png', name: 'C' },
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/c-programming-569564.png', name: 'C++' },
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/java-60-1174953.png', name: 'Java' },
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/python-2-226051.png', name: 'Python' },
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/c-programming-569564.png', name: 'C#' },
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/dot-net-1-1175179.png', name: '.NET Core' },
+    ],
+    'databases': [
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/mysql-19-1174939.png', name: 'MySQL' },
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/mongodb-3-1175138.png', name: 'MongoDB' },
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/postgresql-11-1175122.png', name: 'PostgreSQL' },
+    ],
+    'devops': [
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/git-225996.png', name: 'Git' },
+      { image: 'https://cdn.iconscout.com/icon/free/png-256/docker-226091.png', name: 'Docker' },
+    ],
+  }
+
+  console.log(categories[activeTab]);
 </script>
 
 <section id='skills'>
-  <h1>Skills</h1>
-  <div class='skill'>
-    <Carousel>
-      <LanguageSkill />
-      <DatabaseSkill />
-    </Carousel>
+  <div class='skills-wrapper'>
+    <h1>Skills</h1>
+    <div class="browser-frame">
+      <div class="browser-tabs">
+        {#each Object.keys(categories) as category}
+          <button
+            class="tab" class:active={activeTab === category}
+            on:click={() => activeTab = category}
+          >
+            {category}
+          </button>
+        {/each}
+      </div>
+
+      <!-- Content Area -->
+      <div class="content-area">
+        {#each categories[activeTab] as skill}
+          <SkillCard {skill} />
+        {/each}
+      </div>
+    </div>
   </div>
 </section>
 
@@ -49,23 +67,63 @@
     #skills {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-        background: #34353A;
+        align-items: center;
+        margin: auto;
+        background-color: #34353A;
+    }
+
+    .skills-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        padding: 50px 0;
     }
 
     #skills h1 {
         color: #fff;
-        font-size: 3rem;
-        margin-bottom: 20px;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        margin: 0 auto 50px auto;
+    }
+
+    .browser-frame {
+        border: 1px solid #ebb257;
+        border-radius: 8px;
+    }
+
+    /* Style for Tabs */
+    .browser-tabs {
+        display: flex;
+        background-color: #ebb257;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .tab {
+        flex-grow: 1;
+        padding: 14px 20px;
+        cursor: pointer;
+        border: none;
+        background: none;
+        outline: none;
+        color: #444;
+    }
+
+    .tab.active {
+        background-color: rgba(0, 0, 0, 0.10);
         font-weight: bold;
     }
 
-    .skill {
+    /* Style for Content Area */
+    .content-area {
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
-        align-items: center;
         justify-content: center;
+        gap: 20px;
+        padding: 20px;
     }
 </style>
+
