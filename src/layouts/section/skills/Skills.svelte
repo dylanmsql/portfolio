@@ -1,9 +1,19 @@
 <script lang='ts'>
   import SkillCard from '../../../components/SkillCard.svelte';
 
+  interface Skill {
+    image: string;
+    name: string;
+  }
+
+  interface Category {
+    name: string;
+    content: Skill[];
+  }
+
   let activeTab = 'webdev';
 
-  const categories = {
+  const categories: Record<string, Category> = {
     'webdev': {
       name: 'Web Development',
       content: [
