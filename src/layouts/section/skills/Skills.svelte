@@ -1,4 +1,5 @@
 <script lang='ts'>
+  import { fade } from 'svelte/transition';
   import SkillCard from '../../../components/SkillCard.svelte';
 
   interface Skill {
@@ -75,8 +76,10 @@
 
       <!-- Content Area -->
       <div class='content-area'>
-        {#each categories[activeTab].content as skill}
-          <SkillCard {skill} />
+        {#each categories[activeTab].content as skill (skill.name)}
+          <div transition:fade="{{delay: 0, duration: 300}}">
+            <SkillCard {skill} />
+          </div>
         {/each}
       </div>
     </div>

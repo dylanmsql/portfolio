@@ -3,7 +3,7 @@
   export let skill;
 </script>
 
-<div class='skill-card' transition:fade="{{duration: 400}}">
+<div class='skill-card'>
   <img src={skill.image} alt={skill.name} />
   <p>{skill.name}</p>
 </div>
