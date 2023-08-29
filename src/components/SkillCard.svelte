@@ -9,7 +9,7 @@
 
 <style>
     .skill-card {
-        width: 200px;
+        width: 150px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -29,5 +29,11 @@
     .skill-card img {
         max-width: 50px;
         max-height: 50px;
+    }
+
+    @media (max-width: 768px) {
+        .skill-card {
+            width: 100px;
+        }
     }
 </style>

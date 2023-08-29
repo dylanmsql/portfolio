@@ -88,7 +88,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 50%;
+        width: 60%;
         padding: 50px 0;
     }
 
@@ -103,13 +103,22 @@
     .browser-frame {
         border: 1px solid #ebb257;
         border-radius: 8px;
+        width: 100%;
+        height: 100%;
     }
 
-    /* Style for Tabs */
     .browser-tabs {
         display: flex;
         background-color: #ebb257;
         border-radius: 8px 8px 0 0;
+        overflow: scroll;
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 
     .tab {
@@ -127,13 +136,24 @@
         font-weight: bold;
     }
 
-    /* Style for Content Area */
     .content-area {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 20px;
         padding: 20px;
+    }
+
+    @media (max-width: 1024px) {
+        .skills-wrapper {
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .skills-wrapper {
+            width: 100%;
+        }
     }
 </style>
 
