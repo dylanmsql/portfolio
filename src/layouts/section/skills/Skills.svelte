@@ -77,7 +77,7 @@
       <!-- Content Area -->
       <div class='content-area'>
         {#each categories[activeTab].content as skill (skill.name)}
-          <div transition:fade="{{delay: 0, duration: 300}}">
+          <div in:fade={{delay: 300, duration: 300}} out:fade={{delay: 0, duration: 200}}>
             <SkillCard {skill} />
           </div>
         {/each}
