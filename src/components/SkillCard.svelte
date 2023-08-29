@@ -1,8 +1,9 @@
 <script>
+  import { fade } from 'svelte/transition';
   export let skill;
 </script>
 
-<div class='skill-card'>
+<div class='skill-card' transition:fade="{{duration: 400}}">
   <img src={skill.image} alt={skill.name} />
   <p>{skill.name}</p>
 </div>
