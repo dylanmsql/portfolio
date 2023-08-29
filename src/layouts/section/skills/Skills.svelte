@@ -46,8 +46,6 @@
       ],
     },
   };
-
-  console.log(categories[activeTab]);
 </script>
 
 <section id='skills'>
