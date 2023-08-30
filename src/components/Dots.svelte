@@ -19,13 +19,13 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    border: solid 2px #EBB257;
+    border: solid 2px var(--color-yellow);
     transition: all 0.3s ease-in-out;
   }
 
   .active {
     transform: scale(1.5);
-    background-color: #EBB257;
+    background-color: var(--color-yellow);
     transition: all 0.3s ease-in-out;
   }
 </style>

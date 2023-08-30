@@ -1,5 +1,4 @@
 <script lang='ts'>
-  import { fade } from 'svelte/transition';
   import SkillCard from '../../../components/SkillCard.svelte';
 
   interface Skill {
@@ -38,7 +37,7 @@
         { image: 'https://cdn.iconscout.com/icon/free/png-256/java-60-1174953.png', name: 'Java' },
         { image: 'https://cdn.iconscout.com/icon/free/png-256/python-2-226051.png', name: 'Python' },
         { image: 'https://cdn.iconscout.com/icon/free/png-256/c-programming-569564.png', name: 'C#' },
-        { image: 'https://cdn.iconscout.com/icon/free/png-256/dot-net-1-1175179.png', name: '.NET Core' },
+        { image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/.NET_Core_Logo.svg/2048px-.NET_Core_Logo.svg.png', name: '.NET Core' },
       ],
     },
     'databases': {
@@ -77,9 +76,7 @@
       <!-- Content Area -->
       <div class='content-area'>
         {#each categories[activeTab].content as skill (skill.name)}
-          <div in:fade={{delay: 300, duration: 300}} out:fade={{delay: 0, duration: 200}}>
-            <SkillCard {skill} />
-          </div>
+          <SkillCard {skill} />
         {/each}
       </div>
     </div>
@@ -93,7 +90,7 @@
         justify-content: center;
         align-items: center;
         margin: auto;
-        background-color: #34353A;
+        background-color: var(--color-dark-secondary);
     }
 
     .skills-wrapper {
@@ -147,6 +144,10 @@
     .tab.active {
         background-color: rgba(0, 0, 0, 0.10);
         font-weight: bold;
+    }
+
+    .tab:hover {
+        background-color: rgba(0, 0, 0, 0.05);
     }
 
     .content-area {

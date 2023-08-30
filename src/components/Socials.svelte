@@ -41,7 +41,7 @@
       transition: all 0.2s ease-in-out;
 
       &:hover {
-        color: #EBB257;
+        color: var(--color-yellow);
       }
     }
   }

@@ -54,7 +54,7 @@
     }
 
     .profile h1 span {
-        color: #EBB257;
+        color: var(--color-yellow);
     }
 
     .profile {

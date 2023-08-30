@@ -88,10 +88,10 @@
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-        border: solid 3px #EBB257;
+        border: solid 3px var(--color-yellow);
         cursor: pointer;
         background-color: transparent;
-        color: #EBB257;
+        color: var(--color-yellow);
         transition: all 0.3s ease-in-out;
     }
 

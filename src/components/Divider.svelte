@@ -6,6 +6,6 @@
 
 <style>
     hr.solid {
-        border-top: 3px solid #EBB257;
+        border-top: 3px solid var(--color-yellow);
     }
 </style>

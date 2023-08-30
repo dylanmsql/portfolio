@@ -29,7 +29,7 @@
   h2 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
-    color: #EBB257;
+    color: var(--color-yellow);
   }
 
   .info {
@@ -47,7 +47,7 @@
   }
 
   a {
-    color: #EBB257;
+    color: var(--color-yellow);
   }
 
   p {

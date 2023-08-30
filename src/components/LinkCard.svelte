@@ -33,7 +33,7 @@
 
     p {
         margin: 0;
-        color: #ebb257;
+        color: var(--color-yellow);
     }
 
 

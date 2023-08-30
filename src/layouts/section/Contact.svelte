@@ -46,7 +46,7 @@
         justify-content: center;
         align-items: center;
         margin: auto;
-        background-color: #34353A;
+        background-color: var(--color-dark-secondary);
     }
 
     #contact .contact-wrapper {

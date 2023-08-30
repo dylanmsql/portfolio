@@ -87,7 +87,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        background-color: #2E2F34;
+        background-color: var(--color-dark);
         padding: 0 5rem;
         width: 100%;
     }
@@ -112,12 +112,12 @@
     }
 
     .text-color-yellow {
-        color: #EBB257;
+        color: var(--color-yellow);
     }
 
     .active {
-        color: #EBB257;
-        border-bottom: solid 0.2rem #EBB257;
+        color: var(--color-yellow);
+        border-bottom: solid 0.2rem var(--color-yellow);
         transition: all 0.1s ease-in-out;
     }
 </style>

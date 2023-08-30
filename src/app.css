@@ -3,13 +3,16 @@
 @tailwind utilities;
 
 :root {
+    --color-dark: #2E2F34;
+    --color-dark-secondary: #34353A;
+    --color-yellow: #EBB257;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
 
     color-scheme: dark light;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #2E2F34;
+    background-color: var(--color-dark);
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -26,10 +29,10 @@ body::-webkit-scrollbar {
 @media (prefers-color-scheme: dark) {
     :root {
         color: rgba(255, 255, 255, 0.87);
-        background-color: #2E2F34;
+        background-color: var(--color-dark);
     }
 
     a:hover {
-        color: #EBB257;
+        color: var(--color-yellow);
     }
 }
