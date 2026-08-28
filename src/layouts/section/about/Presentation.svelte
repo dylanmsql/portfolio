@@ -11,13 +11,12 @@
   <div class='info'>
     <p class='name'><b>Name : </b> Dylan Masquelier</p>
     <p class='duration'><b>Age : </b> {age}</p>
-    <p class='address'><b>Address : </b> Lille, France</p>
-    <p class='mail'><b>Mail : </b> dmasquelier@ippon.fr</p>
+    <p class='address'><b>Address : </b> Saint-Lô, France</p>
+    <p class='mail'><b>Mail : </b> masquelierdylan1999@gmail.com</p>
   </div>
-  <p>Hello, I'm a student in computer science at the University of Lille. I'm in the second year of my Master's program.
-    Currently, I'm undertaking an internship at <a href='https://fr.ippon.tech/'>Ippon Technologies</a> in Lille, where
-    I'm contributing to an internal
-    project named <a href='https://github.com/Candy-Doc'>Candy-Doc</a>.</p>
+  <p>Hello, I'm Dylan, a fullstack developer. I hold a Master's degree in IoT from the University of Lille (2024) and
+    spent 2023–2025 on a consulting track at <a href='https://fr.ippon.tech/' target='_blank'>Ippon Technologies</a> in Lille,
+    working across several client missions spanning frontend, backend, and cloud infrastructure.</p>
 </div>
 
 
@@ -33,17 +32,17 @@
   }
 
   .info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 0.75rem 1rem;
     margin: 1rem 0;
-    flex-wrap: wrap;
   }
 
   .address, .duration, .mail, .name {
-    width: 50%;
     font-style: italic;
     font-size: 1rem;
+    overflow-wrap: break-word;
   }
 
   a {
@@ -55,8 +54,8 @@
   }
 
   @media (max-width: 565px) {
-    .address, .duration, .mail, .name {
-      width: 100%;
+    .info {
+      grid-template-columns: 1fr;
     }
   }
 </style>

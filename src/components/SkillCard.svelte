@@ -1,10 +1,11 @@
-<script>
-  import { fade } from 'svelte/transition';
-  export let skill;
+<script lang='ts'>
+  import type { Skill } from '../utils/type';
+
+  let { skill }: { skill: Skill } = $props();
 </script>
 
 <div class='skill-card'>
-  <img src={skill.image} alt={skill.name} />
+  <img class:invert={skill.invert} src={skill.image} alt={skill.name} />
   <p>{skill.name}</p>
 </div>
 
@@ -24,12 +25,17 @@
     .skill-card:hover {
         background-color: #fff3;
         transform: scale(1.1);
+        box-shadow: 0 12px 24px -10px rgba(235, 178, 87, 0.45);
         transition: all 0.2s ease-in-out;
     }
 
     .skill-card img {
         max-width: 50px;
         max-height: 50px;
+    }
+
+    .skill-card img.invert {
+        filter: invert(1);
     }
 
     @media (max-width: 768px) {

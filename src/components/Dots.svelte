@@ -1,31 +1,43 @@
 <script lang='ts'>
-  export let itemCount: number;
-  export let current;
+  let { itemCount, current, onSelect }: {
+    itemCount: number;
+    current: number;
+    onSelect?: (_: number) => void;
+  } = $props();
 </script>
 
 <div class='dots-container'>
   {#each Array(itemCount) as _, i}
-    <span class='dots' class:active={current === i}></span>
+    <button
+      class='dots'
+      class:active={current === i}
+      aria-label={`Go to slide ${i + 1}`}
+      aria-current={current === i}
+      onclick={() => onSelect?.(i)}
+    ></button>
   {/each}
 </div>
 
 <style lang='scss'>
   .dots-container {
     display: flex;
+    align-items: center;
     gap: 0.5rem;
   }
 
   .dots {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: solid 2px var(--color-yellow);
-    transition: all 0.3s ease-in-out;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border-radius: 999px;
+    border: none;
+    background-color: rgba(235, 178, 87, 0.3);
+    cursor: pointer;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
   }
 
   .active {
-    transform: scale(1.5);
+    width: 22px;
     background-color: var(--color-yellow);
-    transition: all 0.3s ease-in-out;
   }
 </style>

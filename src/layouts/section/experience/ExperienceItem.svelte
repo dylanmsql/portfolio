@@ -1,13 +1,12 @@
 <script lang='ts'>
-  import { reveal } from '../../../../actions/reveal';
+  import { reveal } from '../../../actions/reveal';
 
-  let { year, diploma, speciality, school, location, mention, isLast = false }: {
-    year: number;
-    diploma: string;
-    speciality?: string;
-    school: string;
+  let { project, tag, location, role, bullets, isLast = false }: {
+    project: string;
+    tag?: string;
     location: string;
-    mention?: string;
+    role: string;
+    bullets: string[];
     isLast?: boolean;
   } = $props();
 </script>
@@ -20,15 +19,14 @@
     {/if}
   </div>
   <div class='content'>
-    <p class='date'>{year}</p>
-    <h2>{diploma}</h2>
-    {#if speciality}
-      <p class='speciality'>{speciality}</p>
-    {/if}
-    <p class='school'>{school}, {location}</p>
-    {#if mention}
-      <p class='mention'>{mention}</p>
-    {/if}
+    <p class='role'>{role}</p>
+    <h2>{project}{#if tag}<span class='tag'> · {tag}</span>{/if}</h2>
+    <p class='location'>{location}</p>
+    <ul>
+      {#each bullets as bullet}
+        <li>{bullet}</li>
+      {/each}
+    </ul>
   </div>
 </div>
 
@@ -75,7 +73,7 @@
     text-align: left;
   }
 
-  .date {
+  .role {
     margin: 0 0 0.35rem 0;
     color: var(--color-yellow);
     font-weight: 600;
@@ -89,17 +87,24 @@
     font-weight: bold;
   }
 
-  .speciality,
-  .school {
+  .tag {
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+  }
+
+  .location {
     margin: 0.15rem 0;
     color: rgba(255, 255, 255, 0.7);
   }
 
-  .mention {
-    margin: 0.5rem 0 0 0;
-    color: var(--color-yellow);
-    font-size: 0.8rem;
-    font-style: italic;
+  ul {
+    margin: 0.75rem 0 0 0;
+    padding-left: 1.1rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  li {
+    margin: 0.25rem 0;
   }
 
   @media (prefers-reduced-motion: reduce) {

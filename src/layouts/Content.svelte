@@ -1,5 +1,11 @@
+<script lang='ts'>
+  import type { Snippet } from 'svelte';
+
+  let { children }: { children: Snippet } = $props();
+</script>
+
 <div class='section-wrapper'>
-  <slot></slot>
+  {@render children()}
 </div>
 
 <style>
@@ -12,6 +18,17 @@
         width: 100%;
         padding: 0 5rem;
         min-height: inherit;
+    }
+
+    :global(section.reveal-on-scroll) {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    :global(section.reveal-on-scroll.revealed) {
+        opacity: 1;
+        transform: none;
     }
 
     @media (max-width: 768px) {

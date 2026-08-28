@@ -1,8 +1,6 @@
 <script lang='ts'>
   import Button from '../../../components/Button.svelte';
-  import Divider from '../../../components/Divider.svelte';
   import Presentation from './Presentation.svelte';
-  import Carousel from '../../../components/Carousel.svelte';
   import Diplomas from './diploma/Diplomas.svelte';
 
   const contactMe = (e: Event) => {
@@ -12,34 +10,33 @@
 </script>
 
 <section id='about'>
-  <div class='about-section'>
-    <div class='profile'>
-      <h1>
-        Dylan Masquelier<span>.</span>
-      </h1>
-      <Divider size={10} />
-      <div class='socials'>
-        <a href='https://www.linkedin.com/in/dylan-masquelier-1b1b3a1b0/' target='_blank'>
-          LinkedIn
-        </a>
-        <span>|</span>
-        <a href='https://github.com/dylanmsql' target='_blank'>
-          GitHub
-        </a>
-      </div>
-      <div class='button'>
-        <Button label='Contact Me' onClick='{contactMe}' />
-      </div>
+  <div class='about-grid'>
+    <div class='cell hero-name'>
+      <p class='kicker'>Hello, I'm</p>
+      <h1>Dylan Masquelier<span>.</span></h1>
+      <p class='role'>Fullstack Developer</p>
     </div>
-  </div>
-  <div class='about-section picture'>
-    <img src='77782703.jpeg' alt='moi' />
-  </div>
-  <div class='about-section presentation'>
-    <Carousel>
+
+    <div class='cell photo-card'>
+      <img src='77782703.jpeg' alt='moi' />
+    </div>
+
+    <div class='cell intro-card'>
+      <div class='socials'>
+        <a href='https://www.linkedin.com/in/dylan-masquelier-5741b0185/' target='_blank'>LinkedIn</a>
+        <span>|</span>
+        <a href='https://github.com/dylanmsql' target='_blank'>GitHub</a>
+      </div>
+      <Button label='Contact Me' onClick='{contactMe}' />
+    </div>
+
+    <div class='cell info-card'>
       <Presentation />
+    </div>
+
+    <div class='cell timeline-card'>
       <Diplomas />
-    </Carousel>
+    </div>
   </div>
 </section>
 
@@ -47,50 +44,169 @@
     #about {
         display: flex;
         justify-content: center;
-        align-items: center;
         margin: auto;
-        flex-wrap: wrap;
-        gap: 2rem;
+        width: 100%;
     }
 
-    .profile h1 span {
-        color: var(--color-yellow);
+    .about-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1.5rem;
+        width: 100%;
+        padding: 4rem 0;
     }
 
-    .profile {
+    .cell {
+        opacity: 0;
+        transform: translateY(24px);
+        animation: rise-in 0.8s ease-out forwards;
+    }
+
+    .hero-name {
+        grid-column: 1 / 8;
+        grid-row: 1 / 3;
+        z-index: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
-        gap: 1rem;
+        animation-delay: 0.05s;
     }
 
-    .profile h1 {
-        font-size: 3rem;
-        font-weight: bold;
+    .kicker {
+        margin: 0 0 0.5rem 0;
+        color: var(--color-yellow);
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-size: 0.85rem;
     }
 
-    .profile .socials a {
+    .hero-name h1 {
+        margin: 0;
+        font-size: clamp(2.5rem, 6vw, 5.5rem);
+        font-weight: 700;
+        line-height: 0.95;
+        letter-spacing: -0.02em;
+    }
+
+    .hero-name h1 span {
+        color: var(--color-yellow);
+    }
+
+    .role {
+        margin: 0.75rem 0 0 0;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .photo-card {
+        grid-column: 8 / 13;
+        grid-row: 1 / 3;
+        align-self: center;
+        justify-self: center;
+        z-index: 2;
+        position: relative;
+        width: 100%;
+        max-width: 380px;
+        aspect-ratio: 1;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid rgba(235, 178, 87, 0.3);
+        box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.55);
+        animation-delay: 0.15s;
+    }
+
+    .photo-card img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .photo-card::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(160deg, rgba(235, 178, 87, 0.18), transparent 55%);
+        pointer-events: none;
+    }
+
+    .intro-card {
+        grid-column: 1 / 7;
+        grid-row: 3 / 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 2rem;
+        border-radius: 20px;
+        background-color: var(--color-dark-secondary);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        animation-delay: 0.25s;
+    }
+
+    .intro-card .socials {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .intro-card .socials a {
         text-decoration: none;
     }
 
-    .profile .button {
-        margin: 1rem 0;
+    .info-card {
+        grid-column: 7 / 13;
+        grid-row: 3 / 5;
+        padding: 2rem;
+        border-radius: 20px;
+        background-color: var(--color-dark-secondary);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        animation-delay: 0.35s;
     }
 
-    .picture img {
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
+    .timeline-card {
+        grid-column: 1 / 7;
+        grid-row: 4 / 5;
+        padding: 2rem;
+        border-radius: 20px;
+        background-color: var(--color-dark-secondary);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        animation-delay: 0.45s;
     }
 
-    .presentation {
-        width: 33%;
+    @keyframes rise-in {
+        from {
+            opacity: 0;
+            transform: translateY(24px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
-    @media screen and (max-width: 1312px) {
-        .presentation {
-            width: 100%;
+    @media (prefers-reduced-motion: reduce) {
+        .cell {
+            opacity: 1;
+            transform: none;
+            animation: none;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .about-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .hero-name,
+        .photo-card,
+        .intro-card,
+        .info-card,
+        .timeline-card {
+            grid-column: 1 / -1;
+            grid-row: auto;
         }
     }
 </style>

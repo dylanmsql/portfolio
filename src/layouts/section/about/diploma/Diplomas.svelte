@@ -3,28 +3,28 @@
 
   const contents = [
     {
-      start: 2017,
-      end: 2019,
-      diploma: 'Brevet de technicien supérieur',
-      speciality: 'Système Numerique Informatique et réseaux',
+      year: 2019,
+      diploma: 'BTS SNIR',
+      speciality: 'Systèmes Numériques, option Informatique et Réseaux',
       school: 'Lycée Gustave Eiffel',
       location: 'Armentières',
+      mention: 'Mention Très bien',
     },
     {
-      start: 2019,
-      end: 2021,
+      year: 2021,
       diploma: 'Licence',
       speciality: 'Informatique',
       school: 'Université de Lille',
       location: 'Villeneuve d\'Ascq',
+      mention: 'Mention Très bien',
     },
     {
-      start: 2021,
-      end: 2023,
+      year: 2024,
       diploma: 'Master',
-      speciality: 'Internet des objets',
+      speciality: 'IOT',
       school: 'Université de Lille',
       location: 'Villeneuve d\'Ascq',
+      mention: 'Mention Bien',
     },
   ];
 </script>
@@ -33,9 +33,11 @@
   <h2>
     Diplômes
   </h2>
-  {#each contents as content}
-    <Diploma {...content} />
-  {/each}
+  <div class='timeline'>
+    {#each contents as content, i}
+      <Diploma {...content} isLast={i === contents.length - 1} />
+    {/each}
+  </div>
 </div>
 
 <style>
@@ -46,8 +48,13 @@
         gap: 1rem;
     }
 
+    .timeline {
+        display: flex;
+        flex-direction: column;
+    }
+
     h2 {
         font-size: 1.3rem;
-        color: #EBB257;
+        color: var(--color-yellow);
     }
 </style>
