@@ -5,18 +5,18 @@
     {
       year: 2019,
       diploma: 'BTS SNIR',
-      speciality: 'Systèmes Numériques, option Informatique et Réseaux',
+      speciality: 'Digital Systems, Computer Science and Networks option',
       school: 'Lycée Gustave Eiffel',
       location: 'Armentières',
-      mention: 'Mention Très bien',
+      mention: 'High Distinction',
     },
     {
       year: 2021,
       diploma: 'Licence',
-      speciality: 'Informatique',
+      speciality: 'Computer Science',
       school: 'Université de Lille',
       location: 'Villeneuve d\'Ascq',
-      mention: 'Mention Très bien',
+      mention: 'High Distinction',
     },
     {
       year: 2024,
@@ -24,14 +24,14 @@
       speciality: 'IOT',
       school: 'Université de Lille',
       location: 'Villeneuve d\'Ascq',
-      mention: 'Mention Bien',
+      mention: 'Distinction',
     },
   ];
 </script>
 
 <div class='diplomas'>
   <h2>
-    Diplômes
+    Education
   </h2>
   <div class='timeline'>
     {#each contents as content, i}

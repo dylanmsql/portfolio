@@ -10,7 +10,7 @@
 
   const categories: Category[] = [
     {
-      name: 'Langages',
+      name: 'Languages',
       content: [
         { image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg', name: 'C' },
         { image: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg', name: 'C++' },
@@ -43,14 +43,14 @@
       ],
     },
     {
-      name: 'Base de données',
+      name: 'Databases',
       content: [
         { image: 'https://cdn.iconscout.com/icon/free/png-256/mysql-19-1174939.png', name: 'MySQL' },
         { image: 'https://cdn.iconscout.com/icon/free/png-256/postgresql-11-1175122.png', name: 'PostgreSQL' },
       ],
     },
     {
-      name: 'Outils',
+      name: 'Tools',
       content: [
         { image: 'https://cdn.iconscout.com/icon/free/png-256/git-225996.png', name: 'Git' },
         { image: 'https://cdn.iconscout.com/icon/free/png-256/docker-226091.png', name: 'Docker' },
@@ -129,7 +129,7 @@
         transform: none;
     }
 
-    /* Langages: big card, left column, spans both rows */
+    /* Languages: big card, left column, spans both rows */
     .group-0 {
         grid-column: 1 / 8;
         grid-row: 1 / 3;
@@ -147,13 +147,13 @@
         grid-row: 2 / 3;
     }
 
-    /* Base de données */
+    /* Databases */
     .group-3 {
         grid-column: 1 / 7;
         grid-row: 3 / 4;
     }
 
-    /* Outils */
+    /* Tools */
     .group-4 {
         grid-column: 7 / 13;
         grid-row: 3 / 4;
