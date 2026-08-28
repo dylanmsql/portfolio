@@ -1,7 +1,19 @@
 <script lang='ts'>
-  import Fa from 'svelte-fa';
-  import { faScrewdriverWrench } from '@fortawesome/free-solid-svg-icons';
+  import { faTowerBroadcast } from '@fortawesome/free-solid-svg-icons';
   import { reveal } from '../../actions/reveal';
+  import ProjectCard from '../../components/ProjectCard.svelte';
+  import type { Project } from '../../utils/type';
+
+  const projects: Project[] = [
+    {
+      name: 'Morse Learning',
+      description: 'A small app I built for my girlfriend while she was learning Morse code — a searchable reference table plus a training mode to test yourself.',
+      link: 'https://dylanmsql.github.io/morse-learning/',
+      tags: ['Svelte', 'SvelteKit', 'TypeScript'],
+      icon: faTowerBroadcast,
+      image: 'works/morse-learning.jpg',
+    },
+  ];
 </script>
 
 <section id='works' class='reveal-on-scroll' use:reveal>
@@ -9,13 +21,11 @@
     <div class='ghost-card'>
       <span class='plus'>+</span>
     </div>
-    <div class='message-card'>
-      <div class='works-icon'>
-        <Fa icon={faScrewdriverWrench} />
+    {#each projects as project (project.name)}
+      <div class='project-slot'>
+        <ProjectCard {project} />
       </div>
-      <h1>Works</h1>
-      <p>Selected projects are on their way — check back soon.</p>
-    </div>
+    {/each}
     <div class='ghost-card'>
       <span class='plus'>+</span>
     </div>
@@ -39,8 +49,7 @@
         width: 100%;
     }
 
-    .ghost-card,
-    .message-card {
+    .ghost-card {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -48,9 +57,6 @@
         min-height: 220px;
         border-radius: 20px;
         text-align: center;
-    }
-
-    .ghost-card {
         grid-column: span 3;
         border: 1px dashed rgba(255, 255, 255, 0.12);
         color: rgba(255, 255, 255, 0.15);
@@ -71,45 +77,8 @@
         font-weight: 300;
     }
 
-    .message-card {
+    .project-slot {
         grid-column: 4 / 10;
-        gap: 1rem;
-        padding: 3rem;
-        border: 1px dashed rgba(235, 178, 87, 0.35);
-        background-color: rgba(255, 255, 255, 0.02);
-    }
-
-    .works-icon {
-        width: 64px;
-        height: 64px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        background-color: var(--color-yellow-soft);
-        color: var(--color-yellow);
-        font-size: 1.5rem;
-        animation: float 3s ease-in-out infinite;
-    }
-
-    h1 {
-        text-align: center;
-        font-size: 2.5rem;
-        font-weight: 700;
-    }
-
-    p {
-        color: rgba(255, 255, 255, 0.6);
-        font-size: 1.1rem;
-    }
-
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-6px);
-        }
     }
 
     @keyframes pulse {
@@ -122,7 +91,6 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-        .works-icon,
         .ghost-card {
             animation: none;
         }
@@ -133,7 +101,7 @@
             display: none;
         }
 
-        .message-card {
+        .project-slot {
             grid-column: 1 / -1;
         }
     }

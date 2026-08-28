@@ -17,3 +17,12 @@ export type Contact = {
   link: string;
   wide?: boolean;
 };
+
+export type Project = {
+  name: string;
+  description: string;
+  link: string;
+  tags: string[];
+  icon: IconDefinition;
+  image?: string;
+};
